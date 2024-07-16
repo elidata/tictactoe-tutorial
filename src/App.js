@@ -52,7 +52,7 @@ function Board({ xIsNext, squares, onPlay }) {
   );
 }
 
-export default function Game() {
+function Game() {
   const [history, setHistory] = useState([Array(9).fill(null)]);
   const [currentMove, setCurrentMove] = useState(0);
   const xIsNext = currentMove % 2 === 0;
@@ -113,3 +113,14 @@ function calculateWinner(squares) {
   }
   return null;
 }
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Tic Tac Toe</h1>
+      <Game />
+    </div>
+  );
+}
+
+export default App;
